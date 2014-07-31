@@ -1,4 +1,9 @@
+This is an API for the Code for Vegas Informed Voter app built using Ruby 2.1.2 and Rails 4.1.4.
+The app was generated using the 'rails-api' gem.
+
 1. rails-api new voter_app
 2. add gem 'active_model_serializers' and bundle install
 3. rails g scaffold User user_name:string email:string
 4. rake db:migrate
+5. create git repo and push
+6. update README
