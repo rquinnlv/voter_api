@@ -1,0 +1,4 @@
+1. rails-api new voter_app
+2. add gem 'active_model_serializers' and bundle install
+3. rails g scaffold User user_name:string email:string
+4. rake db:migrate
