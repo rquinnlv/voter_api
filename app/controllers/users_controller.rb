@@ -41,10 +41,10 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   # DELETE /users/1.json
-  def destroy
-    @user = User.find(params[:id])
-    @user.destroy
+  #def destroy
+    #@user = User.find(params[:id])
+    #@user.destroy
 
-    head :no_content
-  end
+    #head :no_content
+  #end
 end
