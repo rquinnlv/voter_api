@@ -13,7 +13,7 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should create user" do
     assert_difference('User.count') do
-      post :create, user: { email: @user.email, user_name: @user.user_name }
+      post :create, user: { address1: @user.address1, address2: @user.address2, city: @user.city, state: @user.state, zipcode: @user.zipcode }
     end
 
     assert_response 201
@@ -25,15 +25,15 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should update user" do
-    put :update, id: @user, user: { email: @user.email, user_name: @user.user_name }
+    put :update, id: @user, user: { address1: @user.address1, address2: @user.address2, city: @user.city, state: @user.state, zipcode: @user.zipcode }
     assert_response 204
   end
 
-  test "should destroy user" do
-    assert_difference('User.count', -1) do
-      delete :destroy, id: @user
-    end
+  # test "should destroy user" do
+  #   assert_difference('User.count', -1) do
+  #     delete :destroy, id: @user
+  #   end
 
-    assert_response 204
-  end
+  #   assert_response 204
+  # end
 end
