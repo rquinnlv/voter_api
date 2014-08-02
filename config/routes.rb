@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # get 'users/index'
+  get 'users/index'
 
   # resources :users, except: [:new, :edit]
   resources :users, only: [:show, :create, :update]
