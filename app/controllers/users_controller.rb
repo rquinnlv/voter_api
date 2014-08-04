@@ -38,6 +38,12 @@ class UsersController < ApplicationController
       render json: @user.errors, status: :unprocessable_entity
     end
   end
+  #Require strong_params
+  private
+
+    def user_params
+      params.require(:user).permit(:id, :address1, :address2, :city, :state, :zipcode)
+    end
 
   # DELETE /users/1
   # DELETE /users/1.json
