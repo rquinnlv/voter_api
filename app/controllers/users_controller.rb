@@ -10,9 +10,10 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
-
-    render json: @user
+    render json: User.find(params[:id]), only: [:id]
+    #@user = User.find(params[:id])
+    #render json: @user, only: [:id]
+    # render json: @user.id
   end
 
   # POST /users
@@ -38,12 +39,13 @@ class UsersController < ApplicationController
       render json: @user.errors, status: :unprocessable_entity
     end
   end
-  #Require strong_params
+  
+  #Require strong_params/replace attr_accessible
   private
-
     def user_params
-      params.require(:user).permit(:id, :address1, :address2, :city, :state, :zipcode)
+      params.require(:id, :address1, :address2, :city, :state, :zipcode).permit(:id, :address1, :address2, :city, :state, :zipcode)
     end
+
 
   # DELETE /users/1
   # DELETE /users/1.json
