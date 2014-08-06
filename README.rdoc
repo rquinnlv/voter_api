@@ -7,3 +7,4 @@ The app was generated using the 'rails-api' gem.
 4. rake db:migrate
 5. create git repo and push
 6. update README
+7. Delete destroy definition in users_controller.rb

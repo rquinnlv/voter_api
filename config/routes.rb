@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'users/index'
-
+  get 'users/index' => 'users#index'
   resources :users, except: [:new, :edit]
+  # resources :users, only: [:show, :create, :update]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -13,6 +14,12 @@ Rails.application.routes.draw do
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+
+  get 'users/:id' => 'users#show'
+  # get 'user/:id' => 'users#show'
+  # get 'user' => 'users#show'
+  # get 'users/:id' => 'user#show', as: :id
+  # get '/users/:id/all' => 'users#all'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
