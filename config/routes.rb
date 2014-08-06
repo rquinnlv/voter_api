@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :issues, except: [:new, :edit]
   get 'users/index' => 'users#index'
   resources :users, except: [:new, :edit]
   # resources :users, only: [:show, :create, :update]
