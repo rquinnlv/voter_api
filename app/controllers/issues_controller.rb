@@ -50,7 +50,7 @@ class IssuesController < ApplicationController
 
   #Require strong_params/replace attr_accessible
   private
-    def user_params
+    def issue_params
       params.require(:id).permit(:id)
     end  
 end

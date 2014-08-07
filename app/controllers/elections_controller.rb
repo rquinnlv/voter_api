@@ -47,4 +47,10 @@ class ElectionsController < ApplicationController
 
     head :no_content
   end
+
+  #Require strong_params/replace attr_accessible
+  private
+    def election_params
+      params.require(:id).permit(:id)
+    end 
 end
