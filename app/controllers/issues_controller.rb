@@ -47,4 +47,10 @@ class IssuesController < ApplicationController
 
     head :no_content
   end
+
+  #Require strong_params/replace attr_accessible
+  private
+    def user_params
+      params.require(:id).permit(:id)
+    end  
 end
