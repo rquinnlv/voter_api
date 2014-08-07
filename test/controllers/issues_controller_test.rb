@@ -29,11 +29,11 @@ class IssuesControllerTest < ActionController::TestCase
     assert_response 204
   end
 
-  test "should destroy issue" do
-    assert_difference('Issue.count', -1) do
-      delete :destroy, id: @issue
-    end
+  #  test "should destroy issue" do
+  #    assert_difference('Issue.count', -1) do
+  #      delete :destroy, id: @issue
+  #    end
 
-    assert_response 204
-  end
+  #    assert_response 204
+  #  end
 end
