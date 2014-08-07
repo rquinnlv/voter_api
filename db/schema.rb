@@ -11,13 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140806122055) do
+ActiveRecord::Schema.define(version: 20140806132002) do
 
   create_table "issues", force: true do |t|
-    t.string   "healthcare"
-    t.string   "education"
-    t.string   "economy"
-    t.string   "immigration"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

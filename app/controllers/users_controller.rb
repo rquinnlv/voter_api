@@ -10,9 +10,10 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    render json: User.find(params[:id]), only: [:id]
-    #@user = User.find(params[:id])
-    #render json: @user, only: [:id]
+    @user = User.find(params[:id])
+    
+    render json: @user, only: [:id]
+    # render json: User.find(params[:id]), only: [:id]
     # render json: @user.id
   end
 
@@ -40,12 +41,10 @@ class UsersController < ApplicationController
     end
   end
   
-  #Require strong_params/replace attr_accessible
-  private
-    def user_params
-      params.require(:id, :address1, :address2, :city, :state, :zipcode).permit(:id, :address1, :address2, :city, :state, :zipcode)
-    end
-
+  def issues
+    # issue = Issue.find(params[:id])
+    head :ok
+  end
 
   # DELETE /users/1
   # DELETE /users/1.json
@@ -55,4 +54,10 @@ class UsersController < ApplicationController
 
   #  head :no_content
   # end
+
+  #Require strong_params/replace attr_accessible
+  private
+    def user_params
+      params.require(:id, :address1, :address2, :city, :state, :zipcode).permit(:id, :address1, :address2, :city, :state, :zipcode)
+    end
 end

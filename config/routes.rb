@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :issues, except: [:new, :edit]
   get 'users/index' => 'users#index'
   resources :users, except: [:new, :edit]
   # resources :users, only: [:show, :create, :update]
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   get 'users/:id' => 'users#show'
+  get 'users/:id/issues' => 'users#issues'
   # get 'user/:id' => 'users#show'
   # get 'user' => 'users#show'
   # get 'users/:id' => 'user#show', as: :id
