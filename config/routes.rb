@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   get 'users/:id' => 'users#show'
+  get 'users/:id/issues' => 'users#issues'
   # get 'user/:id' => 'users#show'
   # get 'user' => 'users#show'
   # get 'users/:id' => 'user#show', as: :id
