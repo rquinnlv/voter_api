@@ -29,11 +29,11 @@ class ElectionsControllerTest < ActionController::TestCase
     assert_response 204
   end
 
-  test "should destroy election" do
-    assert_difference('Election.count', -1) do
-      delete :destroy, id: @election
-    end
+  #  test "should destroy election" do
+  #    assert_difference('Election.count', -1) do
+  #    delete :destroy, id: @election
+  #  end
 
-    assert_response 204
-  end
+  #  assert_response 204
+  #  end
 end
