@@ -13,7 +13,7 @@ class ElectionsControllerTest < ActionController::TestCase
 
   test "should create election" do
     assert_difference('Election.count') do
-      post :create, election: { date: @election.date, location: @election.location }
+      post :create, election: { }
     end
 
     assert_response 201
@@ -25,7 +25,7 @@ class ElectionsControllerTest < ActionController::TestCase
   end
 
   test "should update election" do
-    put :update, id: @election, election: { date: @election.date, location: @election.location }
+    put :update, id: @election, election: { }
     assert_response 204
   end
 
