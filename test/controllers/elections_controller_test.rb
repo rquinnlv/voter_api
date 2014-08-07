@@ -5,29 +5,29 @@ class ElectionsControllerTest < ActionController::TestCase
     @election = elections(:one)
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:elections)
-  end
+  #  test "should get index" do
+  #    get :index
+  #    assert_response :success
+  #    assert_not_nil assigns(:elections)
+  #  end
 
-  test "should create election" do
-    assert_difference('Election.count') do
-      post :create, election: { }
-    end
+  #  test "should create election" do
+  #    assert_difference('Election.count') do
+  #      post :create, election: { }
+  #    end
 
-    assert_response 201
-  end
+  #    assert_response 201
+  #  end
 
   test "should show election" do
     get :show, id: @election
     assert_response :success
   end
 
-  test "should update election" do
-    put :update, id: @election, election: { }
-    assert_response 204
-  end
+  #  test "should update election" do
+  #    put :update, id: @election, election: { }
+  #    assert_response 204
+  #  end
 
   #  test "should destroy election" do
   #    assert_difference('Election.count', -1) do
