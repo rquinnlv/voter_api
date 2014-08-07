@@ -17,12 +17,12 @@ Rails.application.routes.draw do
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  get 'users/:id' => 'users#show'
   get 'users/:id/issues' => 'users#issues'
   # get 'user/:id' => 'users#show'
   # get 'user' => 'users#show'
   # get 'users/:id' => 'user#show', as: :id
   # get '/users/:id/all' => 'users#all'
+  # get 'users/:id' => 'users#show'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -52,6 +52,10 @@ Rails.application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
+
+  resources :elections do
+    resources :users
+  end
 
   # Example resource route with concerns:
   #   concern :toggleable do
