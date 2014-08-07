@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   get 'users/index' => 'users#index'
-  resources :candidates, except: [:new, :edit]
-  resources :elections, except: [:new, :edit]
-  resources :issues, except: [:new, :edit]
-  resources :users, except: [:new, :edit]
-  # resources :users, only: [:show, :create, :update]
+  resources :candidates, only: [:show]
+  resources :elections, only: [:show]
+  resources :issues, only: [:show]
+  resources :users, except: [:destroy]
+  # resources :users, except: [:new, :edit]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
