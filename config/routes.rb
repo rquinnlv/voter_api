@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  get 'users/index' => 'users#index'
   resources :candidates, except: [:new, :edit]
   resources :elections, except: [:new, :edit]
   resources :issues, except: [:new, :edit]
-  get 'users/index' => 'users#index'
   resources :users, except: [:new, :edit]
   # resources :users, only: [:show, :create, :update]
 
@@ -18,12 +18,12 @@ Rails.application.routes.draw do
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  get 'users/:id' => 'users#show'
   get 'users/:id/issues' => 'users#issues'
   # get 'user/:id' => 'users#show'
   # get 'user' => 'users#show'
   # get 'users/:id' => 'user#show', as: :id
   # get '/users/:id/all' => 'users#all'
+  # get 'users/:id' => 'users#show'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

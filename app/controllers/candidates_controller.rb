@@ -47,4 +47,10 @@ class CandidatesController < ApplicationController
 
     head :no_content
   end
+
+  # Require strong_params/replace attr_accessible
+  private
+    def user_params
+      params.require(:id, :name, :percentage, :ward, :photo_path).permit(:id, :name, :percentage, :ward, :photo_path)
+    end
 end
