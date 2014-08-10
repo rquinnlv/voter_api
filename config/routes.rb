@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   api_version(:module => "V1", :path => {:value => "v1"}, :default => true) do
+  
+    get 'users/index' => 'users#index'
+    get 'users/:id/candidates' => 'users#candidates'
+    get 'users/:id/elections' => 'users#elections'
+    get 'users/:id/issues' => 'users#issues'
+    resources :candidates, only: [:show]
+    resources :elections, only: [:show]
+    resources :issues, only: [:show]
+    resources :users, except: [:destroy]
   end
-  get 'users/index' => 'users#index'
-  resources :candidates, only: [:show]
-  resources :elections, only: [:show]
-  resources :issues, only: [:show]
-  resources :users, except: [:destroy]
   # resources :users, except: [:new, :edit]
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -20,7 +24,6 @@ Rails.application.routes.draw do
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  get 'users/:id/issues' => 'users#issues'
   # get 'user/:id' => 'users#show'
   # get 'user' => 'users#show'
   # get 'users/:id' => 'user#show', as: :id
