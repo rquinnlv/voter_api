@@ -6,7 +6,7 @@ The routes.rb file still needs to be updated.
 The API is versioned with "versionist" gem.
 
 Questions:
-1. Should I wrap the models, serializers, and tests in the V1 module?
-2. How should the routes be configured?
-3. Although it's a bit late for TDD, how should the tests be written?
+1. Should I wrap the models and serializers in the V1 module?
+2. How should the routes be configured? Should candidates, elections, and issues be nested under users?
+3. How should the tests be updated?
 4. Should we bother with the presenters folder that was created with the versionist gem scaffold?
