@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CandidatesControllerTest < ActionController::TestCase
+class V1::CandidatesControllerTest < ActionController::TestCase
   setup do
     @candidate = candidates(:one)
   end

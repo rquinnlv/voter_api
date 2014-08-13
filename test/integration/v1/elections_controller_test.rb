@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ElectionsControllerTest < ActionController::TestCase
+class V1::ElectionsControllerTest < ActionController::TestCase
   setup do
     @election = elections(:one)
   end

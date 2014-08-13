@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class IssuesControllerTest < ActionController::TestCase
+class V1::IssuesControllerTest < ActionController::TestCase
   setup do
     @issue = issues(:one)
   end
