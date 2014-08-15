@@ -5,11 +5,14 @@ Rails.application.routes.draw do
     get 'users/:id/candidates' => 'users#candidates'
     get 'users/:id/elections' => 'users#elections'
     get 'users/:id/issues' => 'users#issues'
-    resources :candidates, only: [:show]
-    resources :elections, only: [:show]
-    resources :issues, only: [:show]
-    resources :users, except: [:destroy]
+    resources :candidates, only: [:show], :constraints => {:format => /(json)/ }
+    resources :elections, only: [:show], :constraints => {:format => /(json)/ }
+    resources :issues, only: [:show], :constraints => {:format => /(json)/ }
+    resources :users, except: [:destroy], :constraints => {:format => /(json)/ }
   end
+
+  # resources :categories, :only => [:show], :constraints => {:format => /(json|xml)/}
+
   # resources :users, except: [:new, :edit]
 
   # The priority is based upon order of creation: first created -> highest priority.
