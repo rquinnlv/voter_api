@@ -10,3 +10,4 @@ Questions:
 2. How should the routes be configured? Should candidates, elections, and issues be nested under users?
 3. How should the tests be updated?
 4. Should we bother with the presenters folder that was created with the versionist gem scaffold?
+5. Should there be code in config/routes.rb that enforces JSON response format?
