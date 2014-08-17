@@ -6,6 +6,7 @@ one:
   city: MyString
   state: MyString
   zipcode: 1
+  token: MyString
 
 two:
   address1: MyString
@@ -13,3 +14,4 @@ two:
   city: MyString
   state: MyString
   zipcode: 1
+  token: MyString

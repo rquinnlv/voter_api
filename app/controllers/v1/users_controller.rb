@@ -13,7 +13,7 @@ module V1
     def show
       @user = User.find(params[:id])
       
-      render json: @user, only: [:id]
+      render json: @user, only: [:id, :token]
       # render json: User.find(params[:id]), only: [:id]
       # render json: @user.id
     end
@@ -69,7 +69,7 @@ module V1
     #Require strong_params/replace attr_accessible
     private
       def user_params
-        params.require(:id, :address1, :address2, :city, :state, :zipcode).permit(:id, :address1, :address2, :city, :state, :zipcode)
+        params.require(:id, :address1, :address2, :city, :state, :zipcode, :token).permit(:id, :address1, :address2, :city, :state, :zipcode, :token)
       end
   end
 end
