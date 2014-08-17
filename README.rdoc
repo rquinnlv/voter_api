@@ -5,9 +5,6 @@ Each endpoint controller has one database entry.
 The routes.rb file still needs to be updated.
 The API is versioned with "versionist" gem.
 
-Questions:
-1. Should I wrap the models and serializers in the V1 module?
-2. How should the routes be configured? Should candidates, elections, and issues be nested under users?
-3. How should the tests be updated?
-4. Should we bother with the presenters folder that was created with the versionist gem scaffold?
-5. Should there be code in config/routes.rb that enforces JSON response format?
+To Do:
+
+Create UserID category for user that generates random UUID and save it. This UUID will be tied to the address. A new UUID is created each time an address is entered. UUID is stored so that the address can be recalled using UUID. UUID is returned when a user is created. UUID is a string.
