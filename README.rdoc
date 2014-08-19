@@ -1,16 +1,9 @@
 This is an API for the Code for Vegas Informed Voter app built using Ruby 2.1.2 and Rails 4.1.4.
 The app was generated using the 'rails-api' gem.
-There are currently four endpoints: User, Issues, Candidates, and Elections.
-Each endpoint controller has one database entry. 
-The routes.rb file still needs to be updated.
+There are currently four endpoints: User, Issues, Candidates, and Elections. 
 The API is versioned with "versionist" gem.
+The database is SqLite3.
 
-<<<<<<< HEAD
 To Do:
 
-Create UserID category for user that generates random UUID and save it. This UUID will be tied to the address. A new UUID is created each time an address is entered. UUID is stored so that the address can be recalled using UUID. UUID is returned when a user is created. UUID is a string.
-=======
-Done:
-
-Create UserID category for user that generates random UUID and save it. This UUID will be tied to the address. A new UUID is created each time an address is entered. UUID is returned when a user is created. UUID is a string. UUID is stored so that the address can be recalled using UUID.
->>>>>>> uuid
+1. Update database by entering dummy data to see if we can find what we want to find. There are currently 2 users with the same address but different IDs and UUIDs in the Users database.
