@@ -5,6 +5,12 @@ Each endpoint controller has one database entry.
 The routes.rb file still needs to be updated.
 The API is versioned with "versionist" gem.
 
+<<<<<<< HEAD
 To Do:
 
 Create UserID category for user that generates random UUID and save it. This UUID will be tied to the address. A new UUID is created each time an address is entered. UUID is stored so that the address can be recalled using UUID. UUID is returned when a user is created. UUID is a string.
+=======
+Done:
+
+Create UserID category for user that generates random UUID and save it. This UUID will be tied to the address. A new UUID is created each time an address is entered. UUID is returned when a user is created. UUID is a string. UUID is stored so that the address can be recalled using UUID.
+>>>>>>> uuid

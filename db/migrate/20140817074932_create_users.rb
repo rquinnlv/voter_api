@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.integer :zipcode
+      t.string :token
 
       t.timestamps
     end

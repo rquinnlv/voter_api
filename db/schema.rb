@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140810072749) do
+ActiveRecord::Schema.define(version: 20140817074932) do
 
   create_table "candidates", force: true do |t|
     t.string   "name"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140810072749) do
     t.string   "city"
     t.string   "state"
     t.integer  "zipcode"
+    t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
