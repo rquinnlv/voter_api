@@ -11,9 +11,10 @@ module V1
     # GET /users/1
     # GET /users/1.json
     def show
-      @user = User.find(params[:id])
-      
-      render json: @user, only: [:id, :token]
+      @user = User.find_by_token(params[:id]) || User.find(params[:id])
+
+      render json: @user 
+      # render json: @user, only: [:id, :token]
       # render json: User.find(params[:id]), only: [:id]
       # render json: @user.id
     end
@@ -56,6 +57,12 @@ module V1
       # issue = Issue.find(params[:id])
       head :ok
     end
+
+    #  def token
+    #    @user = User.find_by_token(params[:id])
+
+    #    render json: @user 
+    #  end
 
     # DELETE /users/1
     # DELETE /users/1.json

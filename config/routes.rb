@@ -6,10 +6,12 @@ Rails.application.routes.draw do
     get 'users/:id/candidates' => 'users#candidates'
     get 'users/:id/elections' => 'users#elections'
     get 'users/:id/issues' => 'users#issues'
+
     resources :candidates, only: [:show], :constraints => {:format => /(json)/ }
     resources :elections, only: [:show], :constraints => {:format => /(json)/ }
     resources :issues, only: [:show], :constraints => {:format => /(json)/ }
     resources :users, except: [:destroy], :constraints => {:format => /(json)/ }
+
   end
 
   # resources :categories, :only => [:show], :constraints => {:format => /(json|xml)/}
