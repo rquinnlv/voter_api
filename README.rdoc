@@ -3,7 +3,5 @@ The app was generated using the 'rails-api' gem.
 There are currently four endpoints: User, Issues, Candidates, and Elections. 
 The API is versioned with "versionist" gem.
 The database is SqLite3.
-
-To Do:
-
-1. Update database by entering dummy data to see if we can find what we want to find. There are currently 2 users with the same address but different IDs and UUIDs in the Users database.
+JSON serialization courtesy of "active_model_serializers" gem.
+Database has 2 entries for users, 1 entry each for issues, candidates, and elections; feel free to add more.
