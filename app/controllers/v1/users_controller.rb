@@ -76,7 +76,7 @@ module V1
     #Require strong_params/replace attr_accessible
     private
       def user_params
-        params.require(:id, :address1, :address2, :city, :state, :zipcode, :token).permit(:id, :address1, :address2, :city, :state, :zipcode, :token)
+        params.require(:address1, :address2, :city, :state, :zipcode).permit(:address1, :address2, :city, :state, :zipcode)
       end
   end
 end
