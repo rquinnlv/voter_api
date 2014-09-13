@@ -22,10 +22,11 @@ module V1
     # POST /users
     # POST /users.json
     def create
-      @user = User.new(params[:user])
+
+      @user = User.new(user_params)
 
       if @user.save
-        render json: @user, status: :created, location: @user
+        render json: @user.token, status: :created, location: @user
       else
         render json: @user.errors, status: :unprocessable_entity
       end
@@ -34,6 +35,7 @@ module V1
     # PATCH/PUT /users/1
     # PATCH/PUT /users/1.json
     def update
+
       @user = User.find(params[:id])
 
       if @user.update(params[:user])
@@ -76,7 +78,7 @@ module V1
     #Require strong_params/replace attr_accessible
     private
       def user_params
-        params.require(:address1, :address2, :city, :state, :zipcode).permit(:address1, :address2, :city, :state, :zipcode)
+        params.require(:user).permit(:address1, :address2, :city, :state, :zipcode)
       end
   end
 end
