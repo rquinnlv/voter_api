@@ -2,6 +2,12 @@
 
 one:
   name: MyString
+  percentage: MyString
+  ward: 1
+  photo_path: MyString
 
 two:
   name: MyString
+  percentage: MyString
+  ward: 1
+  photo_path: MyString

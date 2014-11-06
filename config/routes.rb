@@ -1,8 +1,22 @@
 Rails.application.routes.draw do
-  resources :issues, except: [:new, :edit]
-  get 'users/index' => 'users#index'
   resources :users, except: [:new, :edit]
-  # resources :users, only: [:show, :create, :update]
+  api_version(:module => "V1", :path => {:value => "v1"}, :default => true) do
+  
+    get 'users/index' => 'users#index'
+    get 'users/:id/candidates' => 'users#candidates'
+    get 'users/:id/elections' => 'users#elections'
+    get 'users/:id/issues' => 'users#issues'
+
+    resources :candidates, only: [:show], :constraints => {:format => /(json)/ }
+    resources :elections, only: [:show], :constraints => {:format => /(json)/ }
+    resources :issues, only: [:show], :constraints => {:format => /(json)/ }
+    resources :users, except: [:destroy], :constraints => {:format => /(json)/ }
+
+  end
+
+  # resources :categories, :only => [:show], :constraints => {:format => /(json|xml)/}
+
+  # resources :users, except: [:new, :edit]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -16,12 +30,11 @@ Rails.application.routes.draw do
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  get 'users/:id' => 'users#show'
-  get 'users/:id/issues' => 'users#issues'
   # get 'user/:id' => 'users#show'
   # get 'user' => 'users#show'
   # get 'users/:id' => 'user#show', as: :id
   # get '/users/:id/all' => 'users#all'
+  # get 'users/:id' => 'users#show'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
